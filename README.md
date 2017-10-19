@@ -130,6 +130,17 @@ Instead, we want to convert the JSON directly to HTML ahead of time, so that we 
 
 Task 1 is to write a converter which can convert the above JSON to renderable HTML that matches the presentation in the screenshot above.
 
+Your rendered HTML should look something like this:
+
+```
+<article>
+  <h2>This is a Title</h2>
+  <span>This is a paragraph, with some inline styles such as <span class="bold">bold</span>, <span class="italic">italic</span>, and <span class="underline">underline</span>.</span>
+  <span>Styles can overlap, like this: <span class="bold"><span class="italic">bold and italic</span></span>, <span class="bold"><span class="italic"><span class="underline">bold, italic, and underline</span></span></span>.</span>
+  <span>Style overlaps do not have to start or end at the same place, for example: <span class="underline">one, <span class="italic">two, <span class="bold">three</span>, two</span>, one</span>.</span>
+</article>
+```
+
 ## Task 2
 
 In addition to the inline styling in task 1, our editor supports bullets and numbered-lists.
@@ -211,6 +222,25 @@ The JSON for an article with bullets and numbered-lists looks like this:
 
 Task 2 is to update your converter to handle bulleted and numbered-lists.
 
+Your rendered HTML should look something like this:
+
+```
+<article>
+  <span>We can have bullet-point lists:</span>
+  <ul>
+    <li>bullets</li>
+    <li>are</li>
+    <li>useful</li>
+  </ul>
+  <span>And numbered lists:</span>
+  <ol>
+    <li>numbers</li>
+    <li>are</li>
+    <li>fun</li>
+  </ol>
+</article>
+```
+
 ### Task 3
 
 In addition to the inline styling and lists in tasks 1 and 2, our editor supports "entities", which include additional data that is not visible in the text. Some examples of entities include @mentions, links, and images.
@@ -250,7 +280,7 @@ The JSON for an article with mentions and links looks like this:
             "contentType" : "image/png",
             "originalFileSize" : 2271,
             "originalFileName" : "avatar.png",
-            "uuid" : "734114e0-aa9a-11e7-8f69-831ae15677d2"
+            "uuid" : "734114e0-aa9a-11e7-8f69-831ae15637d2"
           },
           "text" : "steve-kv",
           "id" : "59d785576a02553c4109c8cd"
@@ -273,3 +303,19 @@ The JSON for an article with mentions and links looks like this:
 Task 3 is to update your converter to handle mentions and links.
 
 Here you can assume that you are converting to React JSX rather than HTML, and output JSX markup like `<Mention data={ ... }>@steve-kv</Mention>` and `<Link data={}>link to url's</Link>` to represent entities.
+
+Your rendered HTML/JSX should look something like this:
+
+```
+<article>
+  <span>We can mention people like <Mention data={{"img" : {
+    "_id" : "59d785576a02553c4109c8ce",
+    "contentType" : "image/png",
+    "originalFileSize" : 2271,
+    "originalFileName" : "avatar.png",
+    "uuid" : "734114e0-aa9a-11e7-8f69-831ae15637d2"
+  },
+  "text" : "steve-kv",
+  "id" : "59d785576a02553c4109c8cd"}}>@steve-kv</Mention> and <Link data={{"description" : "This is a link to Google", "url" : "http://www.google.com"}}>link to url's</Link>.</span>
+</article>
+```
