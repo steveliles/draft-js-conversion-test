@@ -135,9 +135,9 @@ Your rendered HTML should look something like this:
 ```
 <article>
   <h2>This is a Title</h2>
-  <span>This is a paragraph, with some inline styles such as <span class="bold">bold</span>, <span class="italic">italic</span>, and <span class="underline">underline</span>.</span>
-  <span>Styles can overlap, like this: <span class="bold"><span class="italic">bold and italic</span></span>, <span class="bold"><span class="italic"><span class="underline">bold, italic, and underline</span></span></span>.</span>
-  <span>Style overlaps do not have to start or end at the same place, for example: <span class="underline">one, <span class="italic">two, <span class="bold">three</span>, two</span>, one</span>.</span>
+  <p>This is a paragraph, with some inline styles such as <strong>bold</strong>, <em>italic</em>, and <span class="underline">underline</span>.</p>
+  <p>Styles can overlap, like this: <strong><em>bold and italic</em></strong>, <strong><em><span class="underline">bold, italic, and underline</span></em></strong>.</p>
+  <p>Style overlaps do not have to start or end at the same place, for example: <span class="underline">one, <em>two, <strong>three</strong>, two</em>, one</span>.</p>
 </article>
 ```
 
@@ -226,13 +226,13 @@ Your rendered HTML should look something like this:
 
 ```
 <article>
-  <span>We can have bullet-point lists:</span>
+  <p>We can have bullet-point lists:</p>
   <ul>
     <li>bullets</li>
     <li>are</li>
     <li>useful</li>
   </ul>
-  <span>And numbered lists:</span>
+  <p>And numbered lists:</p>
   <ol>
     <li>numbers</li>
     <li>are</li>
@@ -308,7 +308,7 @@ Your rendered HTML/JSX should look something like this:
 
 ```
 <article>
-  <span>We can mention people like <Mention data={{
+  <p>We can mention people like <Mention data={{
     "img" : {
       "_id" : "59d785576a02553c4109c8ce",
       "contentType" : "image/png",
@@ -321,7 +321,7 @@ Your rendered HTML/JSX should look something like this:
   }>@steve-kv</Mention> and <Link data={{
     "description" : "This is a link to Google",
     "url" : "http://www.google.com"
-  }}>link to url's</Link>.</span>
+  }}>link to url's</Link>.</p>
 </article>
 ```
 
