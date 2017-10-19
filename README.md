@@ -308,15 +308,20 @@ Your rendered HTML/JSX should look something like this:
 
 ```
 <article>
-  <span>We can mention people like <Mention data={{"img" : {
-    "_id" : "59d785576a02553c4109c8ce",
-    "contentType" : "image/png",
-    "originalFileSize" : 2271,
-    "originalFileName" : "avatar.png",
-    "uuid" : "734114e0-aa9a-11e7-8f69-831ae15637d2"
-  },
-  "text" : "steve-kv",
-  "id" : "59d785576a02553c4109c8cd"}}>@steve-kv</Mention> and <Link data={{"description" : "This is a link to Google", "url" : "http://www.google.com"}}>link to url's</Link>.</span>
+  <span>We can mention people like <Mention data={{
+    "img" : {
+      "_id" : "59d785576a02553c4109c8ce",
+      "contentType" : "image/png",
+      "originalFileSize" : 2271,
+      "originalFileName" : "avatar.png",
+      "uuid" : "734114e0-aa9a-11e7-8f69-831ae15637d2"
+    },
+    "text" : "steve-kv",
+    "id" : "59d785576a02553c4109c8cd"}
+  }>@steve-kv</Mention> and <Link data={{
+    "description" : "This is a link to Google",
+    "url" : "http://www.google.com"
+  }}>link to url's</Link>.</span>
 </article>
 ```
 
