@@ -16,15 +16,13 @@ Oh, and have fun ...
 
 ## Background
 
-Draft.js is a framework for building rich text editors in React. Draft.js makes it possible to build any type of rich text input, whether you're just looking to support a few inline text styles or building a complex text editor for composing long-form articles.
+A rich text editor allows users to compose articles that have titles and styling (bold, italic, underline). Here's what our editor might look like:
 
-We're using Draft.js in our system to allow users to compose articles that have titles and styling (bold, italic, underline). Here's what our editor currently looks like:
-
-![screenshot of our editor, which uses draft.js](task1.png)
+![screenshot of our editor](task1.png)
 
 ## Task 1
 
-Because a text editor doesn't exist in a vacuum and it is important to save contents for storage or transmission, Draft.js exports to a JSON format. Exporting the content from the screenshot above produces JSON that looks like this:
+The editor exports to a JSON format. Exporting the content from the screenshot above produces JSON that looks like this:
 
 ```
 {
@@ -124,13 +122,11 @@ Because a text editor doesn't exist in a vacuum and it is important to save cont
   "
 ```
 
-When presenting this content for users to read, we need to render it as HTML. One way to do that would be to reload it into a draft.js editable field, however draft.js is a large library and entails a significant download and startup-time overhead.
-
-Instead, we want to convert the JSON directly to HTML ahead of time, so that we can send the pre-rendered HTML directly to the user's browser.
+When presenting this content for users to read, we need to render it as HTML.
 
 Task 1 is to write a converter which can convert the above JSON to renderable HTML that matches the presentation in the screenshot above.
 
-Your rendered HTML should look something like this:
+Your rendered HTML might look something like this:
 
 ```
 <article>
