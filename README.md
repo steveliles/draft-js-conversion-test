@@ -319,3 +319,7 @@ Your rendered HTML/JSX should look something like this:
   "id" : "59d785576a02553c4109c8cd"}}>@steve-kv</Mention> and <Link data={{"description" : "This is a link to Google", "url" : "http://www.google.com"}}>link to url's</Link>.</span>
 </article>
 ```
+
+## Task 4
+
+Relax, we're kidding. Thanks for taking the test, we hope it was kinda fun. Enjoy the rest of your day!
