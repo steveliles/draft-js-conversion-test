@@ -302,7 +302,7 @@ The JSON for an article with mentions and links looks like this:
 
 Task 3 is to update your converter to handle mentions and links.
 
-Here you can assume that you are converting to React JSX rather than HTML, and output JSX markup like `<Mention data={ ... }>@steve-kv</Mention>` and `<Link data={}>link to url's</Link>` to represent entities.
+Here you can assume that you are converting to React JSX rather than HTML, and output JSX markup like `<Mention data={ ... }>@steve-kv</Mention>` and `<Link data={ ... }>link to url's</Link>` to represent entities.
 
 Your rendered HTML/JSX should look something like this:
 
