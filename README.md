@@ -16,13 +16,15 @@ Oh, and have fun ...
 
 ## Background
 
-A rich text editor allows users to compose articles that have titles and styling (bold, italic, underline). Here's what our editor might look like:
+A rich text editor (built on draft.js) allows users to compose articles that have titles and styling (bold, italic, underline). Here's what our editor might look like:
 
 ![screenshot of our editor](task1.png)
 
 ## Task 1
 
-The editor exports to a JSON format. Exporting the content from the screenshot above produces JSON that looks like this:
+The editor is a heavyweight javascript component. For performance reasons we have to _completely avoid using it_ when displaying content for users to read. Luckily the editor can export its content to a JSON format which we can then render directly as simple HTML.
+
+Exporting the content from the screenshot above produces JSON that looks like this:
 
 ```
 {
@@ -122,7 +124,7 @@ The editor exports to a JSON format. Exporting the content from the screenshot a
   "
 ```
 
-When presenting this content for users to read, we need to render it as HTML.
+When presenting this content for users to read, we need to convert it to simple HTML _without using the editor_.
 
 Task 1 is to write a converter which can convert the above JSON to renderable HTML that matches the presentation in the screenshot above.
 
