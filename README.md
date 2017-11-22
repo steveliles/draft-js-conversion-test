@@ -2,9 +2,9 @@
 
 This test is derived from a real task we faced in our current project.
 
-We don't necessarily expect a full working solution, or that you attempt all of the tasks, but if you can show a professional engineering approach, nice code, and reasonable progress towards a solution, you may be the developer we are looking for.
+We don't necessarily expect a full working solution, or that you attempt all of the tasks, but if you can show a _disciplined and professional engineering approach_, nice code, and reasonable progress towards a solution, you may be the developer we are looking for.
 
-You should try to approach the test just as you would approach any task assigned to you in a normal working day.
+You should try to approach the test just as you would approach any task assigned to you in a normal working day, and just as in a normal working day you should pay close attention to what the task is _really asking for_, because this test is also about your ability to deliver software to a specification.
 
 ## Submission
 
@@ -22,7 +22,7 @@ A rich text editor (built on draft.js) allows users to compose articles that hav
 
 ## Task 1
 
-Draft.js is a large javascript library. For performance reasons we must _completely avoid using it_ when displaying content for users to read. Luckily it can export its content to a JSON format which we can then render directly as simple HTML.
+Draft.js is a large javascript library, and can be slow to download and slow to render if there are many formatted components. For performance reasons we must _completely avoid using it_ when displaying content for users to read. Luckily it can export its content to a JSON format which can be used to render the content without using Draft.js.
 
 Exporting the content from the screenshot above produces JSON that looks like this:
 
@@ -124,11 +124,11 @@ Exporting the content from the screenshot above produces JSON that looks like th
   "
 ```
 
-When presenting this content for users to read, we need to convert it to simple HTML _without using draft.js_.
+When presenting this content for users to read, we need to convert it to simple HTML that we might then cache in a database.
 
-Task 1 is to write a converter which can convert the above JSON to renderable HTML that matches the presentation in the screenshot above.
+Task 1 is to write a function which can convert JSON like the above sample to HTML that matches the presentation in the screenshot above.
 
-Your rendered HTML might look something like this:
+Your output HTML might look something like this:
 
 ```
 <article>
@@ -220,7 +220,7 @@ The JSON for an article with bullets and numbered-lists looks like this:
 
 Task 2 is to update your converter to handle bulleted and numbered-lists.
 
-Your rendered HTML should look something like this:
+Your output HTML string should look something like this:
 
 ```
 <article>
@@ -300,9 +300,9 @@ The JSON for an article with mentions and links looks like this:
 
 Task 3 is to update your converter to handle mentions and links.
 
-Here you can assume that you are converting to React JSX rather than HTML, and output JSX markup like `<Mention data={ ... }>@steve-kv</Mention>` and `<Link data={ ... }>link to url's</Link>` to represent entities.
+Here you can assume that you are converting to string of React JSX markup rather than HTML, and output markup like `<Mention data={ ... }>@steve-kv</Mention>` and `<Link data={ ... }>link to url's</Link>` to represent entities.
 
-Your rendered HTML/JSX should look something like this:
+Your output HTML/JSX string should look something like this:
 
 ```
 <article>
@@ -325,4 +325,4 @@ Your rendered HTML/JSX should look something like this:
 
 ## Task 4
 
-Relax, we're kidding. Thanks for taking the test, we hope it was kinda fun. Enjoy the rest of your day!
+Relax, we're kidding. Thanks for taking the test, we hope it was fun. Enjoy the rest of your day!
